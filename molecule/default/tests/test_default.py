@@ -16,4 +16,4 @@ testinfra_hosts = testinfra.utils.ansible_runner.AnsibleRunner(
     'yaml',
 ])
 def test_python_module(host, module):
-    host.check_output('python -c "import %s"' % module)
+    host.check_output('python3.12 -c "import %s"' % module)
