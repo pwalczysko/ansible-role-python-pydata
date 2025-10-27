@@ -8,7 +8,6 @@
 - name: python pydata | install config-manager in rocky
   become: true
   ansible.builtin.dnf:
-    update_cache: true
     name:
       - 'dnf-command(config-manager)'
     state: present
@@ -39,7 +38,6 @@
 - name: python pydata | setup dnf repository
   become: true
   ansible.builtin.dnf:
-    update_cache: true
     name:
       https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm
     state: present
@@ -47,7 +45,6 @@
 - name: python pydata | install python3.12 packages
   become: true
   ansible.builtin.dnf:
-    update_cache: true
     name:
       - "python3.12-devel.x86_64"
       - "python3.12"
